@@ -1,0 +1,93 @@
+generated: '2026-08-05'
+method: searched
+source: https://www.11x.ai/security + https://trust.11x.ai/ + published 11x integration docs
+basis: >-
+  Asserted from 11x's own published compliance and documentation pages only. No OpenAPI exists
+  for this provider, so nothing here is derived from a specification. Every `conforms: false`
+  below means "searched and not found", not "verified absent by testing".
+standards:
+- id: soc2-type-2
+  conforms: true
+  evidence: 'https://www.11x.ai/security: SOC 2 Type II, annual audit covering Security,
+    Availability, Processing Integrity, Confidentiality and Privacy'
+- id: casa-tier-3
+  conforms: true
+  evidence: 'https://www.11x.ai/security: CASA Tier 3 across IAM, Data Security, Infrastructure
+    & Virtualisation Security, Application & Interface Security, Incident Management'
+- id: gdpr
+  conforms: true
+  evidence: 'https://www.11x.ai/security: data retention protocols and DPAs offered to EU customers'
+- id: ccpa
+  conforms: true
+  evidence: https://www.11x.ai/security
+- id: oauth2
+  conforms: true
+  partial: true
+  evidence: >-
+    CRM connections to Salesforce, HubSpot and Zoho use an authorization-code OAuth flow brokered
+    by Ampersand (https://11x.mintlify.app/integrations/mike-crm-integration). 11x is the OAuth
+    CLIENT here, not an authorization server; it publishes no OAuth endpoints of its own.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: 'https://11x.ai/.well-known/security.txt returns 200 with Contact, Expires, Canonical,
+    Preferred-Languages and Policy fields'
+- id: e164
+  conforms: true
+  evidence: >-
+    CRM phone-number field mapping requires E.164 format
+    (https://11x.mintlify.app/integrations/mike-crm-integration)
+- id: a2a
+  conforms: true
+  partial: true
+  grade: near-conformant
+  evidence: >-
+    Agent card served at /.well-known/agent-card.json on the docs origin; passes all three A2A
+    1.0.0 hard checks but declares protocolVersion 0.3 and uses supportedInterfaces rather than
+    additionalInterfaces. See a2a/11x-a2a.yml.
+- id: mcp
+  conforms: true
+  partial: true
+  evidence: >-
+    Live JSON-RPC 2.0 MCP server answering tools/list anonymously at https://11x.mintlify.app/mcp.
+    Documentation-scoped only; no MCP surface for the product API. See mcp/11x-mcp.yml.
+- id: openapi
+  conforms: false
+  evidence: >-
+    No OpenAPI or Swagger document found at any probed path on api.11x.ai, www.11x.ai, or the
+    documentation origin; the docs MCP server's own virtual filesystem contains no spec.
+- id: asyncapi
+  conforms: false
+  evidence: Webhooks are advertised but no event catalog or AsyncAPI document is published.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No error reference published; no spec responses to inspect.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No deprecation or sunset policy published. See lifecycle/11x-lifecycle.yml.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returned 404 on www.11x.ai and 403 on api.11x.ai.
+- id: rfc8414-oauth-authorization-server
+  conforms: false
+  evidence: >-
+    404 on www.11x.ai. trust.11x.ai returns 200 but the document is issued by SafeBase for
+    app.safebase.io, not by 11x.
+- id: iso-27001
+  conforms: false
+  evidence: Not claimed on the security page or the SafeBase trust center.
+- id: pci-dss
+  conforms: false
+  evidence: Not claimed; 11x does not process card payments as part of its API surface.
+- id: hipaa
+  conforms: false
+  evidence: Not claimed.
+- id: fedramp
+  conforms: false
+  evidence: Not claimed.
+regulatory_context:
+  note: >-
+    11x publishes autodial terms covering TCPA compliance and consent requirements for its
+    automated calling services, which is the regime that most directly governs Julian.
+  source: https://www.11x.ai/legal/autodial-terms
+x-evidence:
+  fetched: '2026-08-05'

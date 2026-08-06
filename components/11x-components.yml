@@ -1,0 +1,63 @@
+generated: '2026-08-05'
+method: searched
+source: https://11x.mintlify.app/integrations/mike-browser-implementation
+families:
+- name: PersonaClient browser client
+  kind: javascript-embed
+  description: >-
+    A script-tag-loaded JavaScript client that embeds an 11x conversational agent into a customer
+    web application. The host page injects the loader script with its 11x key, constructs a
+    PersonaClient, initializes a chat session against a configured agent (personaId), and drives
+    the session lifecycle from the page.
+  loader:
+    url: https://api.prod.centralus.az.sindarin.tech/PersonaClientPublicV2
+    query: apikey=<YOUR_11X_KEY>
+    global: window.PersonaClient.default
+    vendor: Sindarin (api.prod.centralus.az.sindarin.tech)
+    vendor_note: >-
+      The loader is served from a third-party vendor host, not from an 11x-owned domain. Recorded
+      as published; this is 11x's own documented installation snippet.
+  configuration:
+  - {name: personaId, required: true, description: identifies the agent to run}
+  - {name: userId, required: false, description: caller-supplied user identifier}
+  - {name: personaName, required: false}
+  - name: details
+    required: false
+    description: 'arbitrary object injected into the agent as {{details.x}}'
+  - {name: options.debugMode, required: false}
+  - {name: options.streamTranscripts, required: false}
+  - {name: options.shouldNotSaveConversation, required: false}
+  methods:
+  - {name: init, description: start a chat session with the configured agent}
+  - {name: pause, description: pause the chat}
+  - {name: resume, description: resume the chat}
+  - {name: end, description: end the chat}
+  events:
+  - {name: messages_update, description: message list changed}
+  - {name: state_updated, description: session state changed}
+  - {name: action, description: agent emitted an action}
+  source: https://11x.mintlify.app/integrations/mike-browser-implementation
+- name: Julian Live Chat
+  kind: hosted-website-surface
+  description: >-
+    Julian's on-site website chat surface for qualifying high-intent visitors and booking meetings
+    directly on the page. Marketed as a product surface; no embed/installation documentation is
+    published.
+  documented_install: false
+  source: https://www.11x.ai/julian-live-chat
+- name: Website Visitor Tracking
+  kind: tracking-script
+  description: >-
+    A site-side tracking capability that identifies visitors in real time, resolves them to
+    people, and triggers outreach. 11x publishes a dedicated Website Tracking Privacy Policy for
+    customers deploying it, which confirms a customer-installed client-side surface exists; the
+    installation snippet itself is not public.
+  documented_install: false
+  sources:
+  - https://www.11x.ai/platform/data-lead-generation/website-visitor-tracking
+  - https://www.11x.ai/legal/website-tracking-privacy-policy
+x-evidence:
+  fetched: '2026-08-05'
+  note: >-
+    The PersonaClient documentation is written against "Mike", a brand 11x has retired into
+    Julian. It is the only component documentation 11x still serves and may be stale.

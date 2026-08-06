@@ -1,0 +1,60 @@
+generated: '2026-08-05'
+method: searched
+probe: true
+source: https://trust.11x.ai/
+url: https://trust.11x.ai/
+platform: SafeBase
+platform_note: trust.11x.ai is a CNAME to x-1.portals.safebase.io
+secondary_source: https://www.11x.ai/security
+certifications:
+- id: soc2-type-2
+  name: SOC 2 Type II
+  detail: >-
+    Annual audit covering System Security, Availability, Processing Integrity, Confidentiality
+    and Privacy.
+  source: https://www.11x.ai/security
+- id: casa-tier-3
+  name: CASA Tier 3
+  detail: >-
+    Covers Identity & Access Management, Data Security, Infrastructure & Virtualisation Security,
+    Application & Interface Security, and Incident Management.
+  source: https://www.11x.ai/security
+regulatory_alignment:
+- id: gdpr
+  claimed: true
+  detail: Data retention protocols and data processing agreements offered to EU customers.
+- id: ccpa
+  claimed: true
+policies_published:
+- Acceptable Use
+- Business Continuity / Disaster Recovery
+- Change Management
+- Code of Conduct
+- Data Classification, Protection and Retention
+- Incident Response
+- Information Security
+- Network Security
+controls_listed:
+- Asset Management
+- Business continuity and disaster recovery
+- Capacity and performance planning
+infrastructure:
+  hosting: AWS
+  encryption_in_transit: TLS
+  encryption_at_rest: AES-256 (AWS RDS)
+  resilience: clustered database configurations, dynamic scaling, containerized deployments
+  monitoring: centralized infrastructure change tracking and security event logging
+not_claimed:
+- ISO 27001
+- PCI DSS
+- HIPAA
+- FedRAMP
+evidence:
+- source: https://trust.11x.ai/
+  http_status: 200
+  keywords: [soc 2, casa tier 3, trust center, security]
+- source: https://www.11x.ai/security
+  http_status: 200
+  keywords: [soc 2 type ii, casa tier 3, gdpr, ccpa, aes-256, aws]
+x-evidence:
+  fetched: '2026-08-05'

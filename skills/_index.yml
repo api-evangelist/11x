@@ -1,0 +1,37 @@
+generated: '2026-08-05'
+method: searched
+source: https://11x.mintlify.app/.well-known/agent-skills/11x/skill.md
+note: >-
+  This skill was PUBLISHED BY 11x (served from their documentation origin at the
+  /.well-known/agent-skills/ path advertised by their A2A agent card) and is saved verbatim.
+  API Evangelist did not author it. No skill was generated for 11x: there is no public OpenAPI
+  to ground operationIds in, and the pipeline does not invent operations.
+skills:
+- file: 11x-skill.md
+  name: 11x
+  description: >-
+    Use when building, testing, or deploying browser automation workflows, RPA tasks, or
+    AI-powered agents that interact with web applications.
+  api: null
+  operations: []
+  published_by: provider
+  source_url: https://11x.mintlify.app/.well-known/agent-skills/11x/skill.md
+  advertised_by: a2a/11x-agent-card.json (skills[0].url)
+  metadata:
+    mintlify-proj: 11x
+    version: '1.0'
+  accuracy_caveat: >-
+    Saved verbatim because 11x publishes it, but its content does not describe 11x. The skill
+    frames 11x as "an AI-powered browser automation and RPA platform" with a visual workflow
+    builder; 11x actually ships Alice (AI SDR) and Julian (AI inbound/voice rep). Its
+    "API endpoints (typical structure)" table is explicitly hypothetical
+    (POST /api/workflows/{id}/execute, GET /api/executions/{id}, ...) and matches no verified
+    11x endpoint. Every resource URL it cites — docs.11x.ai/api, /workflows, /integrations,
+    /llms.txt — is on a hostname that does not resolve. Treat as a provider-published artifact
+    with unverified content, not as an accurate operating guide.
+x-evidence:
+  fetched: '2026-08-05'
+  url: https://11x.mintlify.app/.well-known/agent-skills/11x/skill.md
+  http_status: 200
+  content_type: text/markdown
+  bytes: 10488

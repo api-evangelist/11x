@@ -1,0 +1,59 @@
+generated: '2026-08-05'
+method: searched
+source: probed /.well-known/ on every 11x host found in apis.yml
+hosts:
+- host: https://www.11x.ai
+  documents:
+  - {path: /.well-known/security.txt, status: 200, file: 11x-security.txt}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://api.11x.ai
+  note: >-
+    The production API host resolves and terminates TLS but answers every anonymous request —
+    including every /.well-known/ path — with an identical nginx-style HTTP 403 Forbidden body.
+    Nothing is discoverable without credentials.
+  documents:
+  - {path: /.well-known/security.txt, status: 403}
+  - {path: /.well-known/agent-card.json, status: 403}
+  - {path: /.well-known/agent.json, status: 403}
+  - {path: /.well-known/openid-configuration, status: 403}
+  - {path: /.well-known/oauth-authorization-server, status: 403}
+  - {path: /.well-known/oauth-protected-resource, status: 403}
+  - {path: /.well-known/api-catalog, status: 403}
+  - {path: /.well-known/ai-plugin.json, status: 403}
+- host: https://11x.mintlify.app
+  note: 11x's documentation project origin; the canonical docs.11x.ai CNAME no longer resolves.
+  documents:
+  - {path: /.well-known/agent-card.json, status: 200, file: ../a2a/11x-agent-card.json}
+  - {path: /.well-known/agent-skills/11x/skill.md, status: 200, file: ../skills/11x-skill.md}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/oauth-protected-resource, status: 404}
+- host: https://trust.11x.ai
+  note: >-
+    Trust center is hosted by SafeBase (CNAME x-1.portals.safebase.io). The two OAuth documents
+    below are issued by the SafeBase platform for its own MCP surface, NOT by 11x — every
+    endpoint in them is app.safebase.io. Recorded because they were genuinely served on an 11x
+    hostname, but they describe the vendor's authorization server, not 11x's.
+  documents:
+  - {path: /.well-known/oauth-authorization-server, status: 200, file: 11x-trust-oauth-authorization-server.json,
+     issuer: 'https://app.safebase.io/api/mcp', vendor: safebase}
+  - {path: /.well-known/oauth-protected-resource, status: 200, file: 11x-trust-oauth-protected-resource.json,
+     resource: 'https://app.safebase.io/api/mcp', vendor: safebase}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://status.11x.ai
+  note: Status page hosted by incident.io.
+  documents:
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+x-evidence:
+  fetched: '2026-08-05'

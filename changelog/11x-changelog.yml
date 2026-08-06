@@ -1,0 +1,41 @@
+generated: '2026-08-05'
+method: searched
+source: https://www.11x.ai/launch-sequence
+url: https://www.11x.ai/launch-sequence
+title: 'Launch Sequence: Weekly Updates on Alice & Julian'
+scheme: product-release-hub
+current_version: null
+dated: false
+dating_caveat: >-
+  The hub is framed as weekly updates but individual entries carry no visible publication date,
+  so cadence and recency cannot be verified from the page. Entries are recorded here in the order
+  the hub lists them, NOT as a dated sequence. This is a product release hub, not an API
+  changelog — no API version, endpoint, or breaking-change information is published anywhere.
+api_changelog: null
+entries:
+- {title: Alice Live Web Search, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-live-web-search',
+   date: null, breaking: null}
+- {title: Alice Playbooks, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-playbooks',
+   date: null, breaking: null}
+- {title: Alice Qualification Agent, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-qualification-agent',
+   date: null, breaking: null}
+- {title: Alice Custom Deep Research, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-custom-deep-research',
+   date: null, breaking: null}
+- {title: Alice Smart Email Deliverability, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-smart-email-deliverability',
+   date: null, breaking: null}
+- {title: Alice Knowledge Base, product: Alice, url: 'https://www.11x.ai/launch-sequence/alice-knowledge-base',
+   date: null, breaking: null}
+- {title: Alice ABM Plays, product: Alice, date: null, breaking: null}
+- {title: Smart Replies, product: Alice, date: null, breaking: null}
+- {title: Julian Multichannel, product: Julian, url: 'https://www.11x.ai/launch-sequence/julian-multichannel',
+   date: null, breaking: null}
+- {title: Julian Dynamic Triggers, product: Julian, url: 'https://www.11x.ai/launch-sequence/julian-dynamic-triggers',
+   date: null, breaking: null}
+- {title: Julian Assessments & Smart Outcomes, product: Julian, date: null, breaking: null}
+- {title: Julian Connection Boosts, product: Julian, date: null, breaking: null}
+- {title: Analytics, product: cross-product, date: null, breaking: null}
+x-evidence:
+  fetched: '2026-08-05'
+  url: https://www.11x.ai/launch-sequence
+  http_status: 200
+  entries_listed: 13

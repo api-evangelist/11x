@@ -1,0 +1,58 @@
+generated: '2026-08-05'
+method: searched
+status: published
+source: https://11x.mintlify.app/mcp
+server:
+  name: 11x-documentation
+  transport: http
+  url: https://11x.mintlify.app/mcp
+  protocol: JSON-RPC 2.0 over HTTP with text/event-stream responses
+  authentication: none
+  scope: documentation
+  note: >-
+    This is a live, anonymously callable MCP server hosted on 11x's documentation origin. It is
+    a DOCUMENTATION server, not a product API server — its tools search and read the 11x docs
+    corpus, they do not drive Alice or Julian. No MCP server for the 11x Platform API itself was
+    found on any 11x host. The server is provisioned by the Mintlify docs platform for the 11x
+    project and is served under the 11x.mintlify.app origin because the canonical docs.11x.ai
+    hostname no longer resolves.
+tools:
+- name: search_mike_documentation
+  title: Search documentation
+  description: >-
+    Search across the Mike Documentation knowledge base to find relevant information, code
+    examples, API references, and guides.
+  input_schema: {query: string (required)}
+  read_only: true
+- name: query_docs_filesystem_mike_documentation
+  description: >-
+    Run a read-only shell-like query (rg, grep, find, tree, ls, cat, head, tail, jq and friends)
+    against a virtualized in-memory filesystem containing only the 11x documentation pages and
+    any OpenAPI specs.
+  input_schema: {command: string (required)}
+  read_only: true
+- name: submit_feedback
+  title: Submit documentation feedback
+  description: Report a problem with the documentation site so the docs team can fix it.
+  input_schema: {path: string (required), feedback: string (required)}
+  read_only: false
+tools_list_file: 11x-mcp-tools-list.json
+corpus:
+  note: >-
+    The virtualized documentation filesystem exposed by this server was enumerated with
+    `find / -type f`. It contains exactly two pages and no OpenAPI spec.
+  files:
+  - /integrations/mike-browser-implementation.mdx
+  - /integrations/mike-crm-integration.mdx
+  openapi_present: false
+x-evidence:
+  fetched: '2026-08-05'
+  url: https://11x.mintlify.app/mcp
+  method: 'POST {"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+  http_status: 200
+  content_type: text/event-stream
+  tools_returned: 3
+  also_probed:
+  - {url: 'https://api.11x.ai/mcp', http_status: 403}
+  - {url: 'https://www.11x.ai/mcp', http_status: 404}
+  - {url: 'https://mcp.11x.ai/', http_status: 0, note: NXDOMAIN}

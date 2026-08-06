@@ -1,0 +1,59 @@
+generated: '2026-08-05'
+method: searched
+source: https://status.11x.ai/ + https://www.11x.ai/launch-sequence
+versioning:
+  scheme: unknown
+  current: null
+  docs: null
+  note: >-
+    No versioning policy is published. There is no public API reference, so no version segment
+    (path, header or date) could be observed. api.11x.ai answers anonymous requests with 403.
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: >-
+    No deprecation or sunset policy found on any 11x public page. Not asserted — searched and
+    genuinely absent. Notably, 11x has already retired product brands (Mike and Jordan, both
+    absorbed into Julian per 11x's own llms.txt) and the docs.11x.ai hostname, without any
+    published deprecation notice or migration guidance.
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    No public SLA or uptime commitment. The status page publishes current state only, with no
+    historical uptime percentage exposed anonymously.
+status_page:
+  url: https://status.11x.ai/
+  platform: incident.io
+  http_status: 200
+  feeds:
+  - {kind: rss, url: 'https://status.11x.ai/feed.rss', http_status: 200}
+  - {kind: atom, url: 'https://status.11x.ai/feed.atom', http_status: 200}
+  - {kind: json, url: 'https://status.11x.ai/api/v1/summary', http_status: 200}
+  summary_at_probe:
+    ongoing_incidents: 0
+    in_progress_maintenances: 0
+    scheduled_maintenances: 0
+deprecated_operations: []
+retired_surfaces:
+- name: docs.11x.ai
+  kind: documentation-host
+  state: dns-removed
+  evidence: NXDOMAIN as of 2026-08-05
+  impact: >-
+    Every URL inside 11x's published A2A agent card, its published agent skill, and the
+    documentation llms.txt resolves to this dead hostname. The underlying content is still live
+    at the 11x.mintlify.app origin.
+- name: Mike
+  kind: product-brand
+  state: absorbed
+  successor: Julian
+  evidence: 'https://www.11x.ai/llms.txt: "Julian absorbed the capabilities formerly branded as
+    Mike and Jordan"'
+- name: Jordan
+  kind: product-brand
+  state: absorbed
+  successor: Julian
+  evidence: https://www.11x.ai/llms.txt
+x-evidence:
+  fetched: '2026-08-05'

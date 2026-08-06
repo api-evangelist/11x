@@ -1,0 +1,5 @@
+Contact: mailto:security@11x.ai
+Expires: 2027-04-24T00:00:00Z
+Canonical: https://11x.ai/.well-known/security.txt
+Preferred-Languages: en
+Policy: https://www.11x.ai/security/disclosure

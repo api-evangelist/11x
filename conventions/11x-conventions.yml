@@ -1,0 +1,75 @@
+generated: '2026-08-05'
+method: searched
+source: https://11x.mintlify.app/integrations/ (2 published pages) + https://www.11x.ai/platform/integrations/api
+spec_derived: false
+coverage_caveat: >-
+  11x publishes no API reference and no machine-readable specification, so most cross-cutting
+  semantics below are genuinely unknown rather than absent. Only fields backed by a fetched 11x
+  page carry a value; everything else is null with the reason recorded. Nothing here is inferred
+  from a spec, because there is no spec.
+authentication:
+  style: api-key
+  transport: query parameter (`apikey`) on the browser embed
+  detail: see authentication/11x-authentication.yml
+idempotency:
+  supported: null
+  header: null
+  note: >-
+    No idempotency key, retry-safety, or deduplication contract is documented for the HTTP API.
+    NOTE: 11x does document deduplication at the CRM-integration layer — a "Deduplicate" toggle
+    that prevents multiple calls to the same phone number, plus a "Deduplication Time Buffer"
+    after which a previously-called prospect may be contacted again. That is a business-level
+    call-suppression control, NOT an API idempotency contract, and it is deliberately not wired
+    as an `Idempotency` pointer.
+pagination:
+  style: null
+  reason: no public API reference
+field_expansion:
+  supported: null
+  reason: no public API reference
+metadata:
+  supported: true
+  detail: >-
+    The PersonaClient config accepts an arbitrary `details` object ("arbitrary data that 11x can
+    inject into your agent with {{details.x}}"), and CRM integrations map Context Fields (Custom
+    Input Variables) into the agent before a call.
+  source: https://11x.mintlify.app/integrations/mike-browser-implementation
+request_tracing:
+  request_id_header: null
+  detail: >-
+    No request-id header documented. 11x does expose a "CRM Request Logs" view in the product
+    (integrations tab > View CRM Request Logs) for inspecting integration request history.
+versioning:
+  style: null
+  reason: no public API reference; see lifecycle/11x-lifecycle.yml
+error_envelope:
+  shape: null
+  rfc9457: null
+  reason: no public API reference and no spec responses to derive from
+rate_limit_signaling:
+  headers: null
+  reason: no public API reference
+events:
+  webhooks_advertised: true
+  webhook_catalog_published: false
+  detail: >-
+    The platform API page advertises webhook support for real-time automation, and Julian Dynamic
+    Triggers are described as initiating calls "when new leads submit forms via CRM/API triggers".
+    No event list, payload schema, delivery/retry semantics, or signature-verification scheme is
+    published, so no Webhooks or AsyncAPI artifact was emitted — there is nothing real to capture.
+  source: https://www.11x.ai/platform/integrations/api
+client_events:
+  detail: >-
+    The browser client exposes an event-listener surface rather than server-sent webhooks.
+  events: [messages_update, state_updated, action]
+  source: https://11x.mintlify.app/integrations/mike-browser-implementation
+data_formats:
+  phone_numbers: E.164 (required for CRM phone-number field mapping)
+  source: https://11x.mintlify.app/integrations/mike-crm-integration
+cross_links:
+  authentication: authentication/11x-authentication.yml
+  lifecycle: lifecycle/11x-lifecycle.yml
+  components: components/11x-components.yml
+  conformance: conformance/11x-conformance.yml
+x-evidence:
+  fetched: '2026-08-05'
