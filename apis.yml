@@ -17,7 +17,7 @@ x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
 created: '2026-08-05'
-modified: '2026-08-05'
+modified: '2026-08-13'
 tags:
 - Company
 - Artificial Intelligence
@@ -112,10 +112,16 @@ common:
   url: conformance/11x-conformance.yml
 - type: Components
   url: components/11x-components.yml
+- type: Plans
+  url: plans/11x-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/11x-rate-limits.yml
+- type: Packages
+  url: packages/11x-packages.yml
 x-enrichment:
-  date: '2026-08-05'
+  date: '2026-08-13'
   status: enriched
-  artifacts_added: 20
+  artifacts_added: 3
   pass: local-v1
 x-coverage:
   state: covered
@@ -136,4 +142,8 @@ x-coverage:
     status: 200
   - url: https://www.11x.ai/.well-known/security.txt
     status: 200
-  checked: '2026-08-05'
+  - url: https://11x.mintlify.app/openapi.json
+    status: 404
+  - url: https://raw.githubusercontent.com/11x-ai/mintlify-docs/main/api-reference/openapi.json
+    status: 404
+  checked: '2026-08-13'
