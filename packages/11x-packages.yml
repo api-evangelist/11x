@@ -1,0 +1,103 @@
+generated: '2026-08-13'
+method: searched
+source: registry.npmjs.org + pypi.org + github.com/11x-ai + https://11x.mintlify.app/ +
+  https://www.11x.ai/platform/integrations/api
+package_count: 0
+official_package_count: 0
+summary: >-
+  11x publishes NO first-party client libraries or SDKs in any package registry. Searched npm
+  (full-text plus direct lookups on `11x`, `@11x/sdk`, `11x-sdk`, `11xai`), PyPI (`11x`,
+  `11x-sdk`, `elevenx`), the 11x-ai GitHub organization, and the entire published documentation
+  corpus. Nothing first-party exists. This is consistent with the rest of the profile: 11x
+  markets a Platform API but publishes no reference, no specification, and no SDK — API access is
+  arranged through the sales motion.
+packages: []
+distribution_note: >-
+  The one 11x-published client-side artifact is NOT registry-distributed: the PersonaClient
+  browser embed is loaded by script tag from a THIRD-PARTY vendor host
+  (https://api.prod.centralus.az.sindarin.tech/PersonaClientPublicV2?apikey=...), not from an
+  11x-owned domain and not from npm/unpkg/jsDelivr. The URL carries no version segment, so a
+  consumer cannot tell which build they are executing and neither can we. See
+  components/11x-components.yml.
+cdn_distribution:
+- name: PersonaClientPublicV2
+  registry: cdn
+  official: true
+  official_basis: published verbatim in 11x's own installation snippet
+  url: https://api.prod.centralus.az.sindarin.tech/PersonaClientPublicV2
+  vendor_host: sindarin.tech (third party, not 11x-owned)
+  version: null
+  published: null
+  version_note: >-
+    Checked, nothing to record. The loader URL is UNPINNED — it floats to whatever the vendor
+    currently serves. There is no registry metadata endpoint, no jsDelivr/unpkg entry, and no
+    version in the path or query string. The only query parameter is the customer's apikey.
+  source: https://11x.mintlify.app/integrations/mike-browser-implementation
+registries_searched:
+- {registry: npm, query: 'text=11x + direct lookups 11x, @11x/sdk, 11x-sdk, 11xai', first_party_hits: 0,
+   status: '404 on every direct lookup'}
+- {registry: pypi, query: '11x, 11x-sdk, elevenx', first_party_hits: 0, status: '404 on every lookup'}
+- {registry: github, query: 'github.com/11x-ai (4 public repos)', first_party_hits: 0}
+- {registry: maven-central, query: not searched, reason: no JVM surface indicated anywhere in the docs}
+- {registry: nuget, query: not searched, reason: no .NET surface indicated anywhere in the docs}
+- {registry: rubygems, query: not searched, reason: no Ruby surface indicated anywhere in the docs}
+- {registry: crates.io, query: not searched, reason: no Rust surface indicated anywhere in the docs}
+github_org:
+  url: https://github.com/11x-ai
+  public_repos: 4
+  first_party_libraries: 0
+  note: >-
+    Every public repository in the 11x GitHub organization is a FORK or an unmodified template of
+    third-party software, not an 11x client library. Recorded so a later round does not re-open
+    this.
+  repos:
+  - name: PlatformX
+    upstream: FlowiseAI/Flowise
+    kind: fork
+    note: 'README is verbatim Flowise: "Drag & drop UI to build your customized LLM flow".'
+  - name: bull_exporter
+    upstream: UpHabit/bull_exporter
+    kind: fork
+    note: Prometheus exporter for Bull queue metrics.
+  - name: livekit-agents
+    upstream: livekit/agents
+    kind: fork
+    note: >-
+      Realtime voice AI agent framework — an infrastructure dependency behind Julian, not an
+      11x client SDK.
+  - name: mintlify-docs
+    upstream: mintlify starter kit
+    kind: template
+    note: >-
+      Unmodified Mintlify Starter Kit. Contains only index.mdx, quickstart.mdx, docs.json, logos
+      and an uncustomized boilerplate AGENTS.md that still carries Mintlify's "Customize this
+      file for your project" instruction. No api-reference/ directory and no openapi.json — this
+      is NOT the source of the live 11x docs project.
+false_positives:
+- name: 11xos
+  registry: npm
+  url: https://www.npmjs.com/package/11xos
+  version: 0.1.2
+  published: '2026-03-04'
+  official: false
+  description: CLI for the 11x CRM — manage leads, views, calls, and more
+  maintainer: robinfaraj <contact@robinfaraj.me>
+  reason: >-
+    NOT first-party and NOT this company. Published by an unaffiliated individual, no homepage,
+    no repository, no link to 11x.ai, and it describes an "11x CRM" — 11x.ai ships AI SDR digital
+    workers, not a CRM. Recorded explicitly so a future round does not mistake a name collision
+    for an official 11x CLI.
+cross_links:
+  components: components/11x-components.yml
+  authentication: authentication/11x-authentication.yml
+x-evidence:
+  fetched: '2026-08-13'
+  probes:
+  - {url: 'https://registry.npmjs.org/11x', http_status: 404}
+  - {url: 'https://registry.npmjs.org/11x-sdk', http_status: 404}
+  - {url: 'https://registry.npmjs.org/@11x/sdk', http_status: 404}
+  - {url: 'https://pypi.org/pypi/11x/json', http_status: 404}
+  - {url: 'https://github.com/11x-ai', http_status: 200}
+  - {url: 'https://raw.githubusercontent.com/11x-ai/mintlify-docs/main/openapi.json', http_status: 404}
+  - {url: 'https://raw.githubusercontent.com/11x-ai/mintlify-docs/main/api-reference/openapi.json',
+     http_status: 404}

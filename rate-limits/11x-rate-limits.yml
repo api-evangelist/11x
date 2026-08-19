@@ -1,0 +1,131 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.11x.ai/products/alice/pricing + https://www.11x.ai/products/julian/pricing +
+  https://11x.mintlify.app/ (full 2-page docs corpus) + https://www.11x.ai/platform/integrations/api
+limit_count: 0
+summary: >-
+  11x publishes NO HTTP rate limits for its Platform API. There is no API reference, no rate-limit
+  page, and no documented response headers or exhaustion status code. The entire published docs
+  corpus is two Mintlify pages (enumerated via the docs MCP server's virtual filesystem) and
+  neither mentions rate limiting. api.11x.ai answers every anonymous request with HTTP 403, so no
+  limit headers could be observed on a live response either. limit_count is 0 because zero HTTP
+  rate limits are documented — an honest zero, not an untested assumption.
+http_rate_limits: []
+response_headers:
+  documented: false
+  observed: false
+  standard_headers: null
+  legacy_headers: null
+  retry_after: null
+  note: >-
+    No X-RateLimit-*, RateLimit-* (RFC 9331 draft), or Retry-After header is documented anywhere,
+    and none could be observed: the production API host returns an identical nginx-style 403 body
+    with no rate-limit headers to every anonymous request.
+exhaustion:
+  status_code: null
+  body: null
+  note: Undocumented and unobservable without credentials.
+plan_quotas:
+  note: >-
+    11x DOES publish hard monthly volume allowances and a concurrency ceiling, but they are
+    COMMERCIAL PLAN QUOTAS attached to a subscription tier, not per-key or per-endpoint HTTP rate
+    limits, and no header signals consumption against them. They are recorded here because they
+    are the only published throughput ceilings that exist, and an integrator will hit them before
+    any HTTP limit. Full plan detail in plans/11x-plans-pricing.yml.
+  source: https://www.11x.ai/products/alice/pricing + https://www.11x.ai/products/julian/pricing
+  quotas:
+  - product: Alice
+    plan: Growth
+    scope: per-account
+    window: month
+    metric: new prospects
+    limit: 2000
+  - product: Alice
+    plan: Pro
+    scope: per-account
+    window: month
+    metric: new prospects
+    limit: 5000
+  - product: Alice
+    plan: Enterprise
+    scope: per-account
+    window: month
+    metric: new prospects
+    limit: '10000+'
+  - product: Julian
+    plan: Growth
+    scope: per-account
+    window: month
+    metric: voice calls
+    limit: 2000
+  - product: Julian
+    plan: Growth
+    scope: per-account
+    window: month
+    metric: chats
+    limit: 3000
+  - product: Julian
+    plan: Growth
+    scope: per-account
+    window: concurrent
+    metric: concurrent calls
+    limit: 3
+  - product: Julian
+    plan: Pro
+    scope: per-account
+    window: month
+    metric: voice calls
+    limit: 4000
+  - product: Julian
+    plan: Pro
+    scope: per-account
+    window: month
+    metric: chats
+    limit: 7000
+  - product: Julian
+    plan: Pro
+    scope: per-account
+    window: concurrent
+    metric: concurrent calls
+    limit: 10
+  - product: Julian
+    plan: Enterprise
+    scope: per-account
+    window: month
+    metric: voice calls
+    limit: '50000+'
+  - product: Julian
+    plan: Enterprise
+    scope: per-account
+    window: month
+    metric: chats
+    limit: '100000+'
+  - product: Julian
+    plan: Enterprise
+    scope: per-account
+    window: concurrent
+    metric: concurrent calls
+    limit: custom
+adjacent_throttles:
+  note: >-
+    Two customer-configurable suppression controls exist at the CRM-integration layer. They
+    throttle 11x's OUTBOUND dialing behaviour, not inbound API traffic, and are not rate limits.
+  controls:
+  - name: Deduplicate
+    description: prevents multiple calls to the same phone number
+    source: https://11x.mintlify.app/integrations/mike-crm-integration
+  - name: Deduplication Time Buffer
+    description: interval after which a previously-called prospect may be contacted again
+    source: https://11x.mintlify.app/integrations/mike-crm-integration
+cross_links:
+  plans: plans/11x-plans-pricing.yml
+  conventions: conventions/11x-conventions.yml
+  authentication: authentication/11x-authentication.yml
+x-evidence:
+  fetched: '2026-08-13'
+  probes:
+  - {url: 'https://api.11x.ai/', http_status: 403, note: no rate-limit headers on the 403}
+  - {url: 'https://www.11x.ai/platform/integrations/api', http_status: 200, note: marketing page;
+      no limits stated}
+  - {url: 'https://11x.mintlify.app/', http_status: 200, note: '2-page docs corpus; no rate-limit page'}
+  - {url: 'https://www.11x.ai/docs', http_status: 404}

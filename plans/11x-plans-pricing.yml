@@ -1,0 +1,186 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.11x.ai/products/alice/pricing + https://www.11x.ai/products/julian/pricing
+plan_count: 6
+currency: USD
+billing_basis: >-
+  All published plans are billed annually (Enterprise may be annual or multi-year). 11x publishes
+  a list price only for the entry "Growth" tier of each product; every higher tier is "Custom /
+  Talk to sales". There is no self-serve signup, no monthly option, and no published API-usage
+  price. Alice pricing is described by 11x as "per lead, not per send".
+api_access_note: >-
+  API access is a PLAN FEATURE, not a separate product line. Julian's Growth tier explicitly
+  lists "API Access Included"; the Alice comparison table lists "API + Webhooks" and "Custom
+  Integrations" as platform rows; Alice Enterprise lists "Custom Integrations + API". Julian
+  Enterprise additionally lists "Custom MCP Integration" on the chat side. No API call quota,
+  overage rate, or rate limit is attached to any tier — see rate-limits/11x-rate-limits.yml.
+products:
+- product: Alice
+  kind: outbound AI SDR
+  url: https://www.11x.ai/products/alice/pricing
+  plans:
+  - name: Growth
+    price: 3750
+    price_display: Starting at $3,750 / mo
+    currency: USD
+    period: month
+    billing: annual
+    custom_priced: false
+    audience: teams putting a digital worker on their outbound pipeline for the first time
+    included:
+      end_users: 5
+      end_users_qualifier: up to
+      new_prospects_per_month: 2000
+      managed_gmail_mailboxes: true
+      mailbox_services: [domain setup, warmup, inbox rotation, monitoring]
+      crm_sync: bi-directional
+      onboarding: Standard (2 weeks)
+      languages: null
+    api_access: true
+    api_access_note: '"API + Webhooks" appears in the plan comparison table; no quota published.'
+    cta: Talk to sales
+  - name: Pro
+    price: null
+    price_display: Custom
+    currency: USD
+    period: month
+    billing: annual
+    custom_priced: true
+    audience: teams scaling outbound across markets, languages, and personas
+    included:
+      end_users: 10
+      end_users_qualifier: up to
+      new_prospects_per_month: 5000
+      managed_gmail_mailboxes: true
+      multi_language_outreach: '105+'
+      crm_sync: bi-directional
+      onboarding: Dedicated (2 weeks)
+    api_access: true
+    cta: Talk to sales
+  - name: Enterprise
+    price: null
+    price_display: Custom
+    currency: USD
+    period: month
+    billing: annual or multi-year
+    custom_priced: true
+    audience: teams orchestrating outbound at scale across every segment and channel
+    included:
+      end_users: unlimited
+      new_prospects_per_month: '10000+'
+      managed_gmail_mailboxes: true
+      crm_sync: bi-directional
+      custom_integrations_and_api: true
+      security: [SSO, Custom DPA, Custom SLA]
+      support: Dedicated CSM + Forward Deployed Engineer
+      onboarding: White-glove (4 weeks)
+    api_access: true
+    cta: Talk to sales
+- product: Julian
+  kind: inbound / voice AI rep
+  url: https://www.11x.ai/products/julian/pricing
+  note: >-
+    Julian is priced as two separately-listed channel lines within each tier — VOICE and CHAT —
+    each with its own list price at the Growth tier and its own monthly volume allowance.
+  plans:
+  - name: Growth
+    lines:
+    - channel: voice
+      price: 5333
+      price_display: Starting at $5,333 / mo
+      currency: USD
+      period: month
+      billing: annual
+      included:
+        calls_per_month: 2000
+        sms: true
+        whatsapp: true
+    - channel: chat
+      price: 2417
+      price_display: Starting at $2,417 / mo
+      currency: USD
+      period: month
+      billing: annual
+      included:
+        chats_per_month: 3000
+    custom_priced: false
+    included:
+      languages: 2
+      knowledge_base: true
+      crm_integration: true
+      api_access: true
+      concurrent_calls: 3
+      onboarding: Standard (2 weeks)
+    cta: Talk to sales
+  - name: Pro
+    price: null
+    price_display: Custom
+    currency: USD
+    billing: annual
+    custom_priced: true
+    included:
+      calls_per_month: 4000
+      chats_per_month: 7000
+      concurrent_calls: 10
+      languages: 10
+      use_cases: 2
+      voice_accent_cloning: true
+      simulated_testing_and_evals: true
+      phone_number_monitoring: true
+      realtime_info_lookup_via_api: true
+      email_follow_up: true
+      onboarding: Dedicated (2 weeks)
+    cta: Talk to sales
+  - name: Enterprise
+    price: null
+    price_display: Custom
+    currency: USD
+    billing: annual or multi-year
+    custom_priced: true
+    included:
+      calls_per_month: '50000+'
+      chats_per_month: '100000+'
+      concurrent_calls: custom
+      languages: custom
+      advanced_routing: true
+      alice_integration: true
+      custom_integrations: true
+      custom_mcp_integration: true
+      deep_enrichment: true
+      sso: true
+      onboarding: White-glove (4 weeks)
+      support: [Dedicated Slack Channel, Customer Success Manager, Weekly Optimization Reviews,
+        Forward Deployed Engineer]
+    cta: Talk to sales
+overage:
+  published: false
+  note: >-
+    No overage rate is published for prospects, calls, chats, or API calls on any tier. The Alice
+    page states pricing is "per lead, not per send" but gives no per-lead rate above the bundled
+    monthly allowance. Exceeding an allowance requires a sales conversation.
+free_tier:
+  available: false
+  trial: false
+  note: >-
+    No free tier, no trial, and no self-serve signup. Every CTA on both pricing pages is
+    "Talk to sales" and routes to https://www.11x.ai/demo.
+discrepancies:
+- field: Alice Growth list price
+  published_page: '$3,750 / mo'
+  llms_txt: '$3,000/month'
+  note: >-
+    11x's own agent-facing https://www.11x.ai/llms.txt states Alice Growth starts at $3,000/month;
+    the human-facing pricing page states $3,750/mo. The llms.txt is stale by $750 (20% low). An
+    agent reading only the llms.txt would quote a price 11x no longer charges. Recorded as
+    published-vs-published contradiction, not resolved by API Evangelist.
+  checked: '2026-08-13'
+- field: total funding
+  pricing_page_banner: '$70M+ raised from a16z and Benchmark'
+  note: Site banner reads "$70M+"; press coverage and this profile's description say roughly $75M.
+x-evidence:
+  fetched: '2026-08-13'
+  probes:
+  - {url: 'https://www.11x.ai/products/alice/pricing', http_status: 200}
+  - {url: 'https://www.11x.ai/products/julian/pricing', http_status: 200}
+  - {url: 'https://www.11x.ai/pricing', http_status: 404}
+  - {url: 'https://www.11x.ai/llms.txt', http_status: 200}
