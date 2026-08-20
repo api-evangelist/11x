@@ -28,6 +28,17 @@ tags:
 - Conversational AI
 - Voice
 - CRM
+- Go-To-Market
+tags_raw:
+- Company
+- Artificial Intelligence
+- AI Agents
+- Sales
+- Sales Automation
+- Lead Generation
+- Conversational AI
+- Voice
+- CRM
 - Go To Market
 apis:
 - name: 11x Platform API
@@ -40,6 +51,10 @@ apis:
   humanURL: https://www.11x.ai/platform/integrations/api
   baseURL: https://api.11x.ai
   tags:
+  - Sales Automation
+  - AI Agents
+  - Webhook
+  tags_raw:
   - Sales Automation
   - AI Agents
   - Webhooks
