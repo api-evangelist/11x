@@ -12,6 +12,17 @@ description: '11x builds autonomous AI "digital workers" for revenue teams — A
   machine-readable specification are not published publicly — api.11x.ai answers anonymous requests
   with HTTP 403 and the marketing API page routes to a sales demo rather than a developer reference.'
 url: https://raw.githubusercontent.com/api-evangelist/11x/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://cdn.prod.website-files.com/66fe5a1a88c73ef8f270d312/67312606ff40e81cde3f1b32_11x%20OG.jpg
 x-type: company
 x-source: harvest:secondary-market
