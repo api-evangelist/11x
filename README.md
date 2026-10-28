@@ -64,5 +64,115 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-11x is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/11x_stock/
+11x builds autonomous AI "digital workers" for revenue teams — Alice, an outbound AI SDR that prospects, researches, and runs multi-channel email and LinkedIn outreach against a 400M+ B2B contact database, and Julian, an inbound AI phone, chat, and SMS rep that qualifies leads and books meetings in real time. The company markets a single unified platform API across both workers for triggering outbound, inbound, and meeting booking from external systems, plus webhooks and native bi-directional Salesforce, HubSpot, and Zoho CRM sync brokered over OAuth via Ampersand. Founded in 2023 with offices in San Francisco and London, 11x has raised roughly $75M across Seed, Series A (Benchmark Capital) and Series B (Andreessen Horowitz), with participation from HubSpot Ventures, Abstract Ventures, and 20VC. The platform API reference and any machine-readable specification are not published publicly — api.11x.ai answers anonymous requests with HTTP 403 and the marketing API page routes to a sales demo rather than a developer reference.
+
+**Areas:** Company · Artificial Intelligence · AI Agents · Sales · Sales Automation · Lead Generation · Conversational AI · Voice · CRM · Go-To-Market · A2A
+
+## 11x on APIs.io
+
+Everything profiled for 11x is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/11x/](https://apis.io/providers/11x/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [11x Platform API](https://apis.io/apis/11x/11x-platform-api/) — A single API surface across Alice (outbound) and Julian (inbound/voice) that triggers outbound campaigns, inbound qualification, and meeting booking from…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [11x-documentation](https://apis.io/servers/11x/11x-documentation/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [11X Authentication](https://apis.io/security/11x/11x-authentication/)
+- [11X Domain Security](https://apis.io/security/11x/11x-domain-security/)
+- [11X Trust Center](https://apis.io/security/11x/11x-trust-center/)
+- [11X Vulnerability Disclosure](https://apis.io/security/11x/11x-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [11X Plans Pricing](https://apis.io/plans/11x/11x-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [11X Rate Limits](https://apis.io/rate-limits/11x/11x-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.11x.ai/)
+- [Documentation](https://11x.mintlify.app/)
+- [Pricing](https://www.11x.ai/products/alice/pricing)
+- [Sign up](https://www.11x.ai/demo)
+- [Support](https://www.11x.ai/demo)
+- [Blog](https://www.11x.ai/blog)
+- [Security](https://www.11x.ai/security/disclosure)
+- [Compliance](https://www.11x.ai/security)
+- [Terms of service](https://www.11x.ai/legal/terms)
+- [Privacy policy](https://www.11x.ai/legal/privacy-policy)
+- [GitHub](https://github.com/11x-ai)
+- [Status](https://status.11x.ai/)
+
+## API Evangelist rating
+
+**Kin Score 38.9** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 45.2 |
+| Access clarity | 60.5 |
+
+**Agent readiness 27.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+
+**Regulatory alignment 32.7** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/11x/](https://apis.io/providers/11x/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 11x: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/11x/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
