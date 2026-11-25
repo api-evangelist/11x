@@ -90,22 +90,22 @@ Model Context Protocol servers that expose the API to agents.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [11X Authentication](https://apis.io/security/11x/11x-authentication/)
-- [11X Domain Security](https://apis.io/security/11x/11x-domain-security/)
-- [11X Trust Center](https://apis.io/security/11x/11x-trust-center/)
-- [11X Vulnerability Disclosure](https://apis.io/security/11x/11x-vulnerability-disclosure/)
+- [11x Authentication](https://apis.io/security/11x/11x-authentication/)
+- [11x Domain Security](https://apis.io/security/11x/11x-domain-security/)
+- [11x Trust Center](https://apis.io/security/11x/11x-trust-center/)
+- [11x Vulnerability Disclosure](https://apis.io/security/11x/11x-vulnerability-disclosure/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [11X Plans Pricing](https://apis.io/plans/11x/11x-plans-pricing/)
+- [11x Plans Pricing](https://apis.io/plans/11x/11x-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [11X Rate Limits](https://apis.io/rate-limits/11x/11x-rate-limits/)
+- [11x Rate Limits](https://apis.io/rate-limits/11x/11x-rate-limits/)
 
 ## Where to find this API
 
@@ -126,18 +126,18 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 38.9** — thin · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 40.8** — developing · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
 | Discoverability | 75.0 |
 | Contract quality | 0.0 |
 | Contract governance | 18.2 |
-| Operational transparency | 44.7 |
+| Operational transparency | 47.6 |
 | Developer ergonomics | 45.2 |
-| Access clarity | 60.5 |
+| Access clarity | 68.1 |
 
-**Agent readiness 27.0** — agent-aware
+**Agent readiness 22.9** — agent-aware
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -157,9 +157,15 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Agent Card | — |
 | Dry Run Mode | — |
 | Delegated Identity | served (partial credit) |
-| Protected Resource Metadata | verified |
+| Protected Resource Metadata | — |
 | Dynamic Client Registration | yes |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
 **Regulatory alignment 32.7** — AI & Biometrics
 
